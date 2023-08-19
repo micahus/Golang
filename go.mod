@@ -1,3 +1,3 @@
-module micah.wiki/hades
+module micah.wiki/hades/demo
 
 go 1.16

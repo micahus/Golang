@@ -1,4 +1,4 @@
-package main
+package design
 
 //单一职责原则
 

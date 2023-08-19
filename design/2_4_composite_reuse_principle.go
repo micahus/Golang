@@ -1,4 +1,4 @@
-package main
+package design
 
 // 合成复用原则
 

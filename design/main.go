@@ -1,8 +1,8 @@
-package main
+package design
 
 import "fmt"
 
-func main() {
+func Design() {
 	fmt.Println("******")
 	do2d1()
 	fmt.Println("******")
