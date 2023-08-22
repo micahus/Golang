@@ -45,6 +45,7 @@ func (kd *KeDecorator) Show() {
 	fmt.Println("手机壳的手机") //装饰额外的方法
 }
 
+// NewKeDecorator decorator
 func NewKeDecorator(phone Phone) Phone {
 	return &KeDecorator{Decorator{phone}}
 }
