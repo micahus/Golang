@@ -21,4 +21,9 @@ func Design() {
 	do3d4()
 	fmt.Println("******")
 	do4d1()
+	fmt.Println("******")
+	do4d2()
+	fmt.Println("******")
+	do4d3()
+
 }
