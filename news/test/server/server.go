@@ -4,9 +4,10 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"google.golang.org/protobuf/types/known/timestamppb"
 	"log"
 	"net"
+
+	"google.golang.org/protobuf/types/known/timestamppb"
 
 	pb "github.com/supermicah/Protobufs/news/micah/wiki/news"
 	"google.golang.org/grpc"

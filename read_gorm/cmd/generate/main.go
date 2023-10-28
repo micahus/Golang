@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gen"
 	"gorm.io/gorm"
-	"strings"
 )
 
 func main() {
@@ -57,13 +57,13 @@ func main() {
 
 	// 自定义模型结体字段的标签
 	// 将特定字段名的 json 标签加上`string`属性,即 MarshalJSON 时该字段由数字类型转成字符串类型
-	jsonField := gen.FieldJSONTagWithNS(func(columnName string) (tagContent string) {
-		toStringField := `balance, `
-		if strings.Contains(toStringField, columnName) {
-			return columnName + ",string"
-		}
-		return columnName
-	})
+	//jsonField := gen.FieldJSONTagWithNS(func(columnName string) (tagContent string) {
+	//	toStringField := `balance, `
+	//	if strings.Contains(toStringField, columnName) {
+	//		return columnName + ",string"
+	//	}
+	//	return columnName
+	//})
 
 	// 将非默认字段名的字段定义为自动时间戳和软删除字段;
 	// 自动时间戳默认字段名为:`updated_at`、`created_at, 表字段数据类型为: INT 或 DATETIME
@@ -83,7 +83,7 @@ func main() {
 	//softDeleteField := gen.FieldType("deleted_at", "gorm.DeletedAt")
 	// 模型自定义选项组
 	//fieldOpts := []gen.ModelOpt{jsonField, autoCreateTimeField, autoUpdateTimeField, softDeleteField}
-	fieldOpts := []gen.ModelOpt{jsonField}
+	//fieldOpts := []gen.ModelOpt{jsonField}
 
 	//// 创建模型的结构体,生成文件在 model 目录; 先创建的结果会被后面创建的覆盖
 	//// 这里创建个别模型仅仅是为了拿到`*generate.QueryStructMeta`类型对象用于后面的模型关联操作中
@@ -107,7 +107,7 @@ func main() {
 	//)
 
 	// 创建模型的方法,生成文件在 query 目录; 先创建结果不会被后创建的覆盖
-	SysMenu := g.GenerateModel("sys_menu", fieldOpts...)
+	SysMenu := g.GenerateModel("sys_menu")
 	g.ApplyBasic(SysMenu)
 	//g.ApplyBasic(allModel...)
 

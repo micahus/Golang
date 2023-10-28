@@ -4,7 +4,7 @@ import "fmt"
 
 //开闭原则
 
-//AbstractBanker 抽象的银行业务员
+// AbstractBanker 抽象的银行业务员
 type AbstractBanker interface {
 	DoBusiness() // DoBusiness 抽象的处理业务接口
 }
